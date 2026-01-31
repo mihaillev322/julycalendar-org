@@ -1,0 +1,454 @@
+:root {
+  --color-primary: #2E3A8C;
+  --color-secondary: #D94B3D;
+  --color-accent: #F2B705;
+  --color-background: #FBFAF7;
+  --color-surface: #FFFFFF;
+  --color-text: #14161A;
+  --color-text-muted: #4B5563;
+  --color-border: #D7DCE3;
+  --radius: 0.25rem;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --space: 1rem;
+  --measure: 70ch;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%;
+  line-height: 1.6;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  font-weight: 700;
+  margin-bottom: 0.75em;
+  color: var(--color-text);
+}
+
+h1 {
+  font-size: clamp(1.75rem, 1.5rem + 1.25vw, 2.5rem);
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 1.35rem + 0.75vw, 2rem);
+  margin-top: 2rem;
+  margin-bottom: 0.875rem;
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+  margin-top: 1.5rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  max-width: var(--measure);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-secondary);
+  text-decoration-thickness: 2px;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+header {
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  padding: calc(var(--space) * 1.5) var(--space);
+  box-shadow: var(--shadow);
+}
+
+header .header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+header .site-name {
+  font-size: clamp(1.5rem, 1.35rem + 0.75vw, 2rem);
+  font-weight: 700;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+header .site-name:hover {
+  color: var(--color-secondary);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+nav a {
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+nav a:hover {
+  border-bottom-color: var(--color-secondary);
+  color: var(--color-secondary);
+}
+
+nav a:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: calc(var(--space) * 2) var(--space);
+  width: 100%;
+}
+
+.breadcrumbs {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.breadcrumbs a {
+  color: var(--color-text-muted);
+}
+
+.breadcrumbs a:hover {
+  color: var(--color-primary);
+}
+
+section {
+  margin-bottom: calc(var(--space) * 3);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow);
+  font-size: 0.9375rem;
+}
+
+caption {
+  font-weight: 700;
+  font-size: 1.125rem;
+  text-align: left;
+  padding: 1rem;
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+  caption-side: top;
+}
+
+thead {
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+}
+
+th {
+  padding: 0.875rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 2px solid var(--color-border);
+}
+
+td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+tbody tr:nth-child(odd) {
+  background-color: var(--color-background);
+}
+
+tbody tr:nth-child(even) {
+  background-color: var(--color-surface);
+}
+
+tbody tr:hover {
+  background-color: rgba(46, 58, 140, 0.05);
+  transition: background-color 0.2s ease;
+}
+
+details {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: var(--shadow);
+}
+
+summary {
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-primary);
+  transition: color 0.2s ease;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::before {
+  content: "▶";
+  display: inline-block;
+  transition: transform 0.2s ease;
+  font-size: 0.75em;
+}
+
+details[open] summary::before {
+  transform: rotate(90deg);
+}
+
+summary:hover {
+  color: var(--color-secondary);
+}
+
+summary:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: var(--radius);
+}
+
+details[open] summary {
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+details p {
+  color: var(--color-text);
+}
+
+blockquote {
+  margin: 1.5rem 0;
+  padding: 1.25rem 1.5rem;
+  background-color: rgba(242, 183, 5, 0.08);
+  border-left: 4px solid var(--color-accent);
+  font-style: italic;
+  color: var(--color-text);
+  max-width: var(--measure);
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+aside {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-primary);
+  padding: 1.5rem;
+  margin: 2rem 0;
+  box-shadow: var(--shadow);
+}
+
+aside h2, aside h3 {
+  margin-top: 0;
+  font-size: 1.125rem;
+  border-bottom: none;
+}
+
+aside ul {
+  list-style-position: inside;
+  margin-left: 0;
+}
+
+aside li {
+  margin-bottom: 0.5rem;
+}
+
+ul, ol {
+  margin-bottom: 1rem;
+  margin-left: 1.5rem;
+  max-width: var(--measure);
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+footer {
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  padding: calc(var(--space) * 1.5) var(--space);
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+}
+
+footer a {
+  color: var(--color-text-muted);
+}
+
+footer a:hover {
+  color: var(--color-primary);
+}
+
+@media (min-width: 768px) {
+  header .header-inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav ul {
+    gap: 2rem;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: calc(var(--space) * 2);
+  }
+
+  table {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  header .header-inner {
+    padding: 0 calc(var(--space) * 2);
+  }
+
+  main {
+    padding: calc(var(--space) * 3) calc(var(--space) * 2);
+  }
+
+  section {
+    margin-bottom: calc(var(--space) * 4);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  summary::before {
+    transition: none;
+  }
+}
+
+@media print {
+  body {
+    background-color: white;
+    color: black;
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+
+  header, footer, nav, aside {
+    display: none;
+  }
+
+  main {
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  a {
+    color: black;
+    text-decoration: underline;
+  }
+
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.875em;
+  }
+
+  h1, h2, h3 {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  table, blockquote, details {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  table {
+    border: 1px solid black;
+  }
+
+  th, td {
+    border: 1px solid black;
+    padding: 0.5rem;
+  }
+
+  thead {
+    background-color: #f0f0f0;
+    color: black;
+  }
+
+  tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+  }
+
+  details {
+    border: 1px solid black;
+  }
+
+  details[open] summary {
+    border-bottom: 1px solid black;
+  }
+
+  summary::before {
+    content: "";
+  }
+
+  blockquote {
+    border-left: 3px solid black;
+    background-color: #f5f5f5;
+  }
+}
